@@ -1,0 +1,101 @@
+<html lang="en"></html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca e-contact Library</title>
+    <link rel="stylesheet" href="./estilos.css" />
+</head>
+
+<body>
+    <div class="grid-principal">
+        <div class="cabecera">
+            <span>
+                <h1 id="nombreBiblioteca">Nombre</h1>
+                <h2 id="totalLibros">xxx registros</h2>
+            </span>
+        </div>
+
+        <div class="formulario-ingreso">
+            <div class="contenedor-registro">
+
+                <form id="formulario-registro">
+                    <h1>Formulario de registro</h1>
+                    
+                    <label>ID:</label>
+                    <input type="text" class="inputTextForm" id="idLibro" name="idLibro" maxlength="8" placeholder="(Ingrese Id. de libro XXXXXXXX)">
+                    <span id="id_error" class="formulario_input_error_inactivo"></span>
+                    <span id="id_duplicado" class="formulario_input_error_inactivo"></span>
+
+                    <label>Tipo:</label>
+                    <select id="tipoLibro" class="inputSelectForm" name="tipoLibro">
+                        <option value="" selected>(seleccione tipo de libro)</option>
+                        <option value="Computación">Computación</option>
+                        <option value="Matemáticas">Matemáticas</option>
+                        <option value="Psicología">Psicología</option>
+                        <option value="Literatura">Literatura</option>
+                    </select>
+                    <span id="tipo_error" class="formulario_input_error_inactivo"></span>
+        
+                    <label>Nombre:</label>
+                    <input type="text" class="inputTextForm" id="nombreLibro" name="nombreLibro" maxlength="50" placeholder="(Ingrese nombre del libro)">
+                    <span id="nombre_error" class="formulario_input_error_inactivo"></span>
+        
+                    <label>Año:</label>
+                    <input type="text" class="inputTextForm" id="annoLibro" name="annoLibro" maxlength="4" placeholder="(Ingrese año de edición entre 1950 a 2024)">
+                    <span id="anno_error" class="formulario_input_error_inactivo"></span>
+                    
+                    <label>Cantidad:</label>
+                    <input type="text" class="inputTextForm" id="numLibros" name="numLibros" maxlength="5" placeholder="(Ingrese cantidad de libros)">
+                    <span id="cantidad_error" class="formulario_input_error_inactivo"></span>
+
+                    <button type="submit">Registrar Libro</button>                     
+                </form>
+            </div>
+        </div>
+
+        <div class="contenedor-popup" id="contenedor-popup">
+            <div class="msg-popup">
+                <h3 id="txt-popup"></h3>
+            </div>
+        </div>
+
+        <div class="filtros">
+            <div class="contenedor-filtros">
+                <button type="button" id="reset-btn">Reiniciar Web</button>
+                <label>Filtrar por ID:</label>
+                <div id="contenedor-searchxID">    
+                </div>
+                <label>Filtrar por Nombre:</label>
+                <input type="search" class="inputTextForm" list="listado" name="busquedaxNombre" id="inputSearchNombre" autocomplete="off" />
+                <datalist id="listado">
+                </datalist>
+            </div>
+        </div>        
+        
+        <br/>
+
+        <div class="detalles">
+            <table id="libros-registrados">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tipo</th>
+                        <th>Nombre</th>
+                        <th>Año</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="resultado-libros">                
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        Desarrollado por Cristian Rojas R. &copy; 2024
+    </footer>
+    
+    <script src="main.js" type="module"></script>
+</body>
+</html>
