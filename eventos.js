@@ -76,11 +76,11 @@ export function onSubmitRequest(formId){
 
         /* Validacion campo ID */
         camposFormulario.id = validateIDValue(idLibro);
-        if( !validateFormInputs(camposFormulario.id, "idLibro", "id_error", respuestas_globales.id_formato, 3000) )
+        if( !validateFormInputs(camposFormulario.id, "idLibro", "id_error", respuestas_globales.id_formato, variables_globales.error_timeout) )
             return false;
         
         camposFormulario.id = !existeIdRegistrado(idLibro);
-        if( !validateFormInputs(camposFormulario.id, "idLibro", "id_duplicado", respuestas_globales.id_duplicado, 3000) )
+        if( !validateFormInputs(camposFormulario.id, "idLibro", "id_duplicado", respuestas_globales.id_duplicado, variables_globales.error_timeout) )
             return false;
 
         camposFormulario.tipo = tipoLibro === "" ? false : true;
